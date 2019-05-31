@@ -216,7 +216,6 @@ Element XML_Parser::SeekingInTheTree(Element* parent_element,int depth,string id
                }
             }
             found_match=XML_Parser::SeekingInTheTree(tree_of_elements.GetTop()[top_elements_index],depth+1,id,found_match,is_changing);
-            if(top_elements_index==0){cout<<found_match.GetId()<<endl;return found_match;}
         }
         return found_match;
     }
