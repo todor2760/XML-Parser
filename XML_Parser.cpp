@@ -14,7 +14,9 @@ void XML_Parser::CreateTree(Element* parent_element,int depth){
                 while(line_index<line.length()&&line[line_index]!='<'){
                     line_index++;
                 }
-                line_index++;
+                if(line_index<line.length()&&line[line_index]==' '){
+                            line_index++;
+                 }
                 if(line[line_index]!='/'){
                         while(line[line_index]!=' '&&line[line_index]!='>'){
                             element_name.push_back(line[line_index]);
@@ -69,7 +71,9 @@ void XML_Parser::CreateTree(Element* parent_element,int depth){
                             element_name.push_back(line[line_index]);
                             line_index++;
                         }
-                        line_index++;
+                        if(line_index<line.length()&&line[line_index]==' '){
+                            line_index++;
+                        }
                         while(line_index<line.length()&&line[line_index]!='>'){
                             string key,value;
                             while(line_index<line.length()&&line[line_index]!='='){
